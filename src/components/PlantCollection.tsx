@@ -85,6 +85,7 @@ const PlantCollection = () => {
                 <span className="w-1 h-1 rounded-full bg-border" />
                 <span>{plant.light} light</span>
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>
