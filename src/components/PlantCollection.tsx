@@ -7,6 +7,7 @@ import plantFiddle from "@/assets/plant-fiddle.jpg";
 const plants = [
   {
     name: "Monstera Deliciosa",
+    slug: "monstera-deliciosa",
     origin: "Southern Mexico",
     light: "Bright indirect",
     image: plantMonstera,
@@ -14,6 +15,7 @@ const plants = [
   },
   {
     name: "Snake Plant",
+    slug: "snake-plant",
     origin: "West Africa",
     light: "Low to bright",
     image: plantSnake,
@@ -21,6 +23,7 @@ const plants = [
   },
   {
     name: "Fiddle Leaf Fig",
+    slug: "fiddle-leaf-fig",
     origin: "West Africa",
     light: "Bright indirect",
     image: plantFiddle,
