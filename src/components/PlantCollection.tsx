@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import plantMonstera from "@/assets/plant-monstera.jpg";
 import plantSnake from "@/assets/plant-snake.jpg";
 import plantFiddle from "@/assets/plant-fiddle.jpg";
@@ -6,6 +7,7 @@ import plantFiddle from "@/assets/plant-fiddle.jpg";
 const plants = [
   {
     name: "Monstera Deliciosa",
+    slug: "monstera-deliciosa",
     origin: "Southern Mexico",
     light: "Bright indirect",
     image: plantMonstera,
@@ -13,6 +15,7 @@ const plants = [
   },
   {
     name: "Snake Plant",
+    slug: "snake-plant",
     origin: "West Africa",
     light: "Low to bright",
     image: plantSnake,
@@ -20,6 +23,7 @@ const plants = [
   },
   {
     name: "Fiddle Leaf Fig",
+    slug: "fiddle-leaf-fig",
     origin: "West Africa",
     light: "Bright indirect",
     image: plantFiddle,
@@ -59,8 +63,9 @@ const PlantCollection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group cursor-pointer"
+              className="group"
             >
+              <Link to={`/plant/${plant.slug}`} className="block cursor-pointer">
               <div className="relative overflow-hidden rounded-lg bg-card mb-5 aspect-[4/5]">
                 <img
                   src={plant.image}
@@ -80,6 +85,7 @@ const PlantCollection = () => {
                 <span className="w-1 h-1 rounded-full bg-border" />
                 <span>{plant.light} light</span>
               </div>
+              </Link>
             </motion.div>
           ))}
         </div>
