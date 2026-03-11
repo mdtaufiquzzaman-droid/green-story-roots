@@ -63,8 +63,9 @@ const PlantCollection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="group cursor-pointer"
+              className="group"
             >
+              <Link to={`/plant/${plant.slug}`} className="block cursor-pointer">
               <div className="relative overflow-hidden rounded-lg bg-card mb-5 aspect-[4/5]">
                 <img
                   src={plant.image}
