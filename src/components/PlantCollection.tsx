@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import plantMonstera from "@/assets/plant-monstera.jpg";
 import plantSnake from "@/assets/plant-snake.jpg";
 import plantFiddle from "@/assets/plant-fiddle.jpg";
