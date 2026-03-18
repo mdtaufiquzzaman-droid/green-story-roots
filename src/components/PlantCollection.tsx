@@ -1,35 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import plantMonstera from "@/assets/plant-monstera.jpg";
-import plantSnake from "@/assets/plant-snake.jpg";
-import plantFiddle from "@/assets/plant-fiddle.jpg";
-
-const plants = [
-  {
-    name: "Monstera Deliciosa",
-    slug: "monstera-deliciosa",
-    origin: "Southern Mexico",
-    light: "Bright indirect",
-    image: plantMonstera,
-    tag: "Popular",
-  },
-  {
-    name: "Snake Plant",
-    slug: "snake-plant",
-    origin: "West Africa",
-    light: "Low to bright",
-    image: plantSnake,
-    tag: "Low Maintenance",
-  },
-  {
-    name: "Fiddle Leaf Fig",
-    slug: "fiddle-leaf-fig",
-    origin: "West Africa",
-    light: "Bright indirect",
-    image: plantFiddle,
-    tag: "Statement",
-  },
-];
+import { plants } from "@/data/plants";
 
 const PlantCollection = () => {
   return (
@@ -55,36 +26,36 @@ const PlantCollection = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           {plants.map((plant, i) => (
             <motion.div
-              key={plant.name}
+              key={plant.slug}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.15 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="group"
             >
               <Link to={`/plant/${plant.slug}`} className="block cursor-pointer">
-              <div className="relative overflow-hidden rounded-lg bg-card mb-5 aspect-[4/5]">
-                <img
-                  src={plant.image}
-                  alt={plant.name}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  loading="lazy"
-                />
-                <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1 rounded-full">
-                  {plant.tag}
-                </span>
-              </div>
-              <h3 className="font-display text-xl font-semibold text-foreground mb-1">
-                {plant.name}
-              </h3>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <span>{plant.origin}</span>
-                <span className="w-1 h-1 rounded-full bg-border" />
-                <span>{plant.light} light</span>
-              </div>
+                <div className="relative overflow-hidden rounded-lg bg-card mb-5 aspect-[4/5]">
+                  <img
+                    src={plant.image}
+                    alt={plant.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  <span className="absolute top-4 left-4 bg-background/90 backdrop-blur-sm text-foreground text-xs font-medium px-3 py-1 rounded-full">
+                    {plant.tag}
+                  </span>
+                </div>
+                <h3 className="font-display text-xl font-semibold text-foreground mb-1">
+                  {plant.name}
+                </h3>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <span>{plant.origin}</span>
+                  <span className="w-1 h-1 rounded-full bg-border" />
+                  <span>{plant.light} light</span>
+                </div>
               </Link>
             </motion.div>
           ))}
