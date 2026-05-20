@@ -1,12 +1,13 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Leaf, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Discover", href: "#discover" },
-  { label: "Collection", href: "#collection" },
-  { label: "Our Story", href: "#story" },
-  { label: "Services", href: "#services" },
+  { label: "Collection", href: "/#collection", type: "anchor" as const },
+  { label: "Guides", href: "/guides", type: "route" as const },
+  { label: "Our Story", href: "/#story", type: "anchor" as const },
+  { label: "Services", href: "/#services", type: "anchor" as const },
 ];
 
 const Navbar = () => {
