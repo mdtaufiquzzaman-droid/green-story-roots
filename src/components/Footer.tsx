@@ -1,11 +1,13 @@
 import { Leaf } from "lucide-react";
+import { Link } from "react-router-dom";
+import { pillars } from "@/data/guides";
 
 const Footer = () => {
   return (
     <footer className="py-16 border-t border-border">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-10 mb-12">
-          <div className="md:col-span-2">
+          <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <Leaf className="w-5 h-5 text-primary" />
               <span className="font-display text-lg font-semibold text-foreground">Botanica Living</span>
@@ -18,10 +20,23 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4 text-sm">Explore</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li><a href="#discover" className="hover:text-foreground transition-colors">Why Botanica</a></li>
-              <li><a href="#collection" className="hover:text-foreground transition-colors">Collection</a></li>
-              <li><a href="#story" className="hover:text-foreground transition-colors">Our Story</a></li>
-              <li><a href="#services" className="hover:text-foreground transition-colors">Services</a></li>
+              <li><a href="/#collection" className="hover:text-foreground transition-colors">Collection</a></li>
+              <li><Link to="/guides" className="hover:text-foreground transition-colors">All Guides</Link></li>
+              <li><a href="/#story" className="hover:text-foreground transition-colors">Our Story</a></li>
+              <li><a href="/#services" className="hover:text-foreground transition-colors">Services</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-display font-semibold text-foreground mb-4 text-sm">Guides</h4>
+            <ul className="space-y-2.5 text-sm text-muted-foreground">
+              {pillars.map((p) => (
+                <li key={p.slug}>
+                  <Link to={`/guides/${p.slug}`} className="hover:text-foreground transition-colors">
+                    {p.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
