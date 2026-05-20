@@ -26,6 +26,8 @@ export interface PlantDetail extends PlantSummary {
   history: string;
   care: string[];
   styling: string[];
+  streamName?: string;
+  streamUrl?: string;
 }
 
 export const plants: PlantDetail[] = [
