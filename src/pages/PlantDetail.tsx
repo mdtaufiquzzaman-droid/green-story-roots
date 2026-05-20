@@ -23,6 +23,21 @@ const PlantDetail = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title={`${plant.name} — Care Guide, Origin & Styling | Botanica Living`}
+        description={`Learn how to care for ${plant.name} (${plant.scientificName}): light, water, humidity, history, and styling ideas from Botanica Living.`}
+        path={`/plant/${plant.slug}`}
+        keywords={[plant.name, plant.scientificName, "houseplant care", `${plant.name} care`, "indoor plant"]}
+        type="article"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "Product",
+          name: plant.name,
+          description: plant.history.slice(0, 200),
+          image: plant.image,
+          category: plant.family,
+        }}
+      />
       <Navbar />
       <main className="pt-16">
         {/* Hero */}
