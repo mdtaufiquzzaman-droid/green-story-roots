@@ -1,6 +1,6 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Sun, Droplets, Thermometer, MapPin, Leaf } from "lucide-react";
+import { ArrowLeft, Sun, Droplets, Thermometer, MapPin, Leaf, PlayCircle, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { plantsBySlug } from "@/data/plants";
@@ -109,6 +109,34 @@ const PlantDetail = () => {
             </motion.div>
           </div>
         </section>
+        {/* Stream / Video Guide */}
+        {plant.streamUrl && plant.streamName && (
+          <section className="py-20 md:py-28 bg-card">
+            <div className="container mx-auto px-6">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="max-w-3xl mx-auto">
+                <p className="text-sm font-medium tracking-[0.2em] uppercase text-primary mb-3">Watch & Learn</p>
+                <h2 className="text-3xl font-display font-semibold text-foreground mb-8">Featured stream</h2>
+                <a
+                  href={plant.streamUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-5 bg-background rounded-lg p-6 border border-border hover:border-primary transition-colors"
+                >
+                  <span className="shrink-0 w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                    <PlayCircle className="w-7 h-7 text-primary" />
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-xs text-muted-foreground mb-1">Stream</p>
+                    <p className="text-base font-medium text-foreground truncate">{plant.streamName}</p>
+                    <p className="text-xs text-muted-foreground truncate mt-1">{plant.streamUrl}</p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-muted-foreground shrink-0 group-hover:text-primary transition-colors" />
+                </a>
+              </motion.div>
+            </div>
+          </section>
+        )}
+
       </main>
       <Footer />
     </div>

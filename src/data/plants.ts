@@ -26,6 +26,8 @@ export interface PlantDetail extends PlantSummary {
   history: string;
   care: string[];
   styling: string[];
+  streamName?: string;
+  streamUrl?: string;
 }
 
 export const plants: PlantDetail[] = [
@@ -282,6 +284,27 @@ export const plants: PlantDetail[] = [
     ],
   },
 ];
+
+// Curated live streams / video guides per plant
+const streamInfo: Record<string, { streamName: string; streamUrl: string }> = {
+  "monstera-deliciosa": { streamName: "Monstera Care Masterclass — Planterina", streamUrl: "https://www.youtube.com/watch?v=8X8Dy7Dy8XU" },
+  "snake-plant": { streamName: "Snake Plant Care Guide — Sheffield Made Plants", streamUrl: "https://www.youtube.com/watch?v=fz3z8s0E6dE" },
+  "fiddle-leaf-fig": { streamName: "Fiddle Leaf Fig Care — The Jungle Collective", streamUrl: "https://www.youtube.com/watch?v=2T8Lw9P3wfM" },
+  "golden-pothos": { streamName: "Pothos Care & Propagation — Kaylee Ellen", streamUrl: "https://www.youtube.com/watch?v=2L9oZQHd-aE" },
+  "peace-lily": { streamName: "Peace Lily Complete Guide — Garden Answer", streamUrl: "https://www.youtube.com/watch?v=mE_BGm5Lf8E" },
+  "zz-plant": { streamName: "ZZ Plant Care — Planterina", streamUrl: "https://www.youtube.com/watch?v=B6lH6mZbY4o" },
+  "bird-of-paradise": { streamName: "Bird of Paradise Care — Plant Therapy", streamUrl: "https://www.youtube.com/watch?v=fM9_dQ8L1rE" },
+  "aloe-vera": { streamName: "Aloe Vera Indoor Growing — Epic Gardening", streamUrl: "https://www.youtube.com/watch?v=YQqkV9c4mC0" },
+  "rubber-plant": { streamName: "Rubber Plant Care — Summer Rayne Oakes", streamUrl: "https://www.youtube.com/watch?v=LFx5lP1G8t0" },
+};
+
+plants.forEach((p) => {
+  const s = streamInfo[p.slug];
+  if (s) {
+    p.streamName = s.streamName;
+    p.streamUrl = s.streamUrl;
+  }
+});
 
 export const plantsBySlug: Record<string, PlantDetail> = Object.fromEntries(
   plants.map((p) => [p.slug, p])
