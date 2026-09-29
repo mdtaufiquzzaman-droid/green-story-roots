@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import ValueProps from "@/components/ValueProps";
 import PlantCollection from "@/components/PlantCollection";
+import FurnitureCollection from "@/components/FurnitureCollection";
 import Testimonials from "@/components/Testimonials";
 import StorySection from "@/components/StorySection";
 import Gallery from "@/components/Gallery";
@@ -41,6 +42,7 @@ const Index = () => {
         <HeroSection />
         <ValueProps />
         <PlantCollection />
+        <FurnitureCollection />
         <Testimonials />
         <StorySection />
         <Gallery />
