@@ -14,7 +14,42 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      furniture_requests: {
+        Row: {
+          created_at: string
+          email: string
+          finish: string | null
+          furniture_slug: string
+          id: string
+          name: string
+          notes: string | null
+          size: string | null
+          wood: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          finish?: string | null
+          furniture_slug: string
+          id?: string
+          name: string
+          notes?: string | null
+          size?: string | null
+          wood?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          finish?: string | null
+          furniture_slug?: string
+          id?: string
+          name?: string
+          notes?: string | null
+          size?: string | null
+          wood?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
