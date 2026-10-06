@@ -14,6 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
+      feedback_responses: {
+        Row: {
+          created_at: string
+          id: string
+          would_create: string
+          would_pay: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          would_create: string
+          would_pay: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          would_create?: string
+          would_pay?: string
+        }
+        Relationships: []
+      }
       furniture_requests: {
         Row: {
           created_at: string
@@ -47,6 +68,48 @@ export type Database = {
           notes?: string | null
           size?: string | null
           wood?: string | null
+        }
+        Relationships: []
+      }
+      idea_submissions: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          image_path: string | null
+          inspiration: string | null
+          material: string | null
+          name: string
+          notes: string | null
+          purpose: string | null
+          size: string | null
+          what: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          image_path?: string | null
+          inspiration?: string | null
+          material?: string | null
+          name: string
+          notes?: string | null
+          purpose?: string | null
+          size?: string | null
+          what: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          image_path?: string | null
+          inspiration?: string | null
+          material?: string | null
+          name?: string
+          notes?: string | null
+          purpose?: string | null
+          size?: string | null
+          what?: string
         }
         Relationships: []
       }
