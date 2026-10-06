@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import PlantDetail from "./pages/PlantDetail";
 import FurnitureDetail from "./pages/FurnitureDetail";
+import SoilHeart from "./pages/SoilHeart";
 import GuideIndex from "./pages/GuideIndex";
 import PillarPage from "./pages/PillarPage";
 import ClusterPage from "./pages/ClusterPage";
@@ -23,6 +24,7 @@ const App = () => (
         <Route path="/" element={<Index />} />
         <Route path="/plant/:slug" element={<PlantDetail />} />
         <Route path="/furniture/:slug" element={<FurnitureDetail />} />
+        <Route path="/soil-heart" element={<SoilHeart />} />
         <Route path="/guides" element={<GuideIndex />} />
         <Route path="/guides/:pillar" element={<PillarPage />} />
         <Route path="/guides/:pillar/:cluster" element={<ClusterPage />} />
