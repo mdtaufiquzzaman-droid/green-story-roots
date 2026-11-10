@@ -32,9 +32,8 @@ const HeroSection = () => {
           >
             Every plant
             <br />
-            <span className="italic text-primary">tells a story</span>
+                       <span className="italic text-primary">has a history</span>
           </motion.h1>
-
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
