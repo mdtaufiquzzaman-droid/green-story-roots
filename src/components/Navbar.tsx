@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Leaf, Menu, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Collection", href: "/#collection", type: "anchor" as const },
-  { label: "Furniture", href: "/#furniture", type: "anchor" as const },
+  { label: "Collection", href: `${import.meta.env.BASE_URL}#collection`, type: "anchor" as const },
+  { label: "Furniture", href: `${import.meta.env.BASE_URL}#furniture`, type: "anchor" as const },
   { label: "Soil Heart", href: "/soil-heart", type: "route" as const },
   { label: "Guides", href: "/guides", type: "route" as const },
-  { label: "Our Story", href: "/#story", type: "anchor" as const },
-  { label: "Services", href: "/#services", type: "anchor" as const },
+  { label: "Our Story", href: `${import.meta.env.BASE_URL}#story`, type: "anchor" as const },
+  { label: "Services", href: `${import.meta.env.BASE_URL}#services`, type: "anchor" as const },
 ];
 
 const Navbar = () => {
@@ -46,7 +46,7 @@ const Navbar = () => {
             ),
           )}
           <a
-            href="/#collection"
+            href={`${import.meta.env.BASE_URL}#collection`}
             className="text-sm font-medium bg-primary text-primary-foreground px-5 py-2 rounded-md hover:bg-botanical-light transition-colors"
           >
             Shop Now
@@ -93,7 +93,7 @@ const Navbar = () => {
                 ),
               )}
               <a
-                href="/#collection"
+                href={`${import.meta.env.BASE_URL}#collection`}
                 className="text-base font-medium bg-primary text-primary-foreground px-5 py-2.5 rounded-md text-center"
                 onClick={() => setMobileOpen(false)}
               >
