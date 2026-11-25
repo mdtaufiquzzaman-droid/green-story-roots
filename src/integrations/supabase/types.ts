@@ -14,6 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      feedback: {
+        Row: {
+          care_info: string
+          created_at: string
+          ease_rating: number
+          id: string
+          improve: string | null
+          would_buy: string
+        }
+        Insert: {
+          care_info: string
+          created_at?: string
+          ease_rating: number
+          id?: string
+          improve?: string | null
+          would_buy: string
+        }
+        Update: {
+          care_info?: string
+          created_at?: string
+          ease_rating?: number
+          id?: string
+          improve?: string | null
+          would_buy?: string
+        }
+        Relationships: []
+      }
       feedback_responses: {
         Row: {
           created_at: string
@@ -110,6 +137,114 @@ export type Database = {
           purpose?: string | null
           size?: string | null
           what?: string
+        }
+        Relationships: []
+      }
+      messages: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          subject: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          subject?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          subject?: string | null
+        }
+        Relationships: []
+      }
+      orders: {
+        Row: {
+          address: string
+          city: string
+          created_at: string
+          delivery: number
+          delivery_date: string
+          email: string
+          id: string
+          items: Json
+          name: string
+          note: string | null
+          order_number: string
+          phone: string
+          postcode: string
+          subtotal: number
+          total: number
+        }
+        Insert: {
+          address: string
+          city: string
+          created_at?: string
+          delivery: number
+          delivery_date: string
+          email: string
+          id?: string
+          items: Json
+          name: string
+          note?: string | null
+          order_number: string
+          phone: string
+          postcode: string
+          subtotal: number
+          total: number
+        }
+        Update: {
+          address?: string
+          city?: string
+          created_at?: string
+          delivery?: number
+          delivery_date?: string
+          email?: string
+          id?: string
+          items?: Json
+          name?: string
+          note?: string | null
+          order_number?: string
+          phone?: string
+          postcode?: string
+          subtotal?: number
+          total?: number
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          comment: string
+          created_at: string
+          id: string
+          name: string
+          plant_slug: string
+          rating: number
+        }
+        Insert: {
+          comment: string
+          created_at?: string
+          id?: string
+          name: string
+          plant_slug: string
+          rating: number
+        }
+        Update: {
+          comment?: string
+          created_at?: string
+          id?: string
+          name?: string
+          plant_slug?: string
+          rating?: number
         }
         Relationships: []
       }

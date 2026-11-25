@@ -15,6 +15,13 @@
       "when": 1791313478837,
       "tag": "0001_soil_heart",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795621543857,
+      "tag": "0002_shop_orders_reviews_feedback_messages",
+      "breakpoints": true
     }
   ]
 }
