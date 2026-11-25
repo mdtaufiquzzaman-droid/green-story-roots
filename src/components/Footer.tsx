@@ -20,10 +20,10 @@ const Footer = () => {
           <div>
             <h4 className="font-display font-semibold text-foreground mb-4 text-sm">Explore</h4>
             <ul className="space-y-2.5 text-sm text-muted-foreground">
-              <li><a href="/#collection" className="hover:text-foreground transition-colors">Collection</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}#collection`} className="hover:text-foreground transition-colors">Collection</a></li>
               <li><Link to="/guides" className="hover:text-foreground transition-colors">All Guides</Link></li>
-              <li><a href="/#story" className="hover:text-foreground transition-colors">Our Story</a></li>
-              <li><a href="/#services" className="hover:text-foreground transition-colors">Services</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}#story`} className="hover:text-foreground transition-colors">Our Story</a></li>
+              <li><a href={`${import.meta.env.BASE_URL}#services`} className="hover:text-foreground transition-colors">Services</a></li>
             </ul>
           </div>
 
